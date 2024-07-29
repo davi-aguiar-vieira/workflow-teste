@@ -27,7 +27,7 @@ jobs:
           pip install requests
 
       - name: Run update script
-        run: python Dados/coleta_api.py
+        run: python Dados/Coleta_dados/coleta_api.py
 
       - name: Check for changes
         run: |
