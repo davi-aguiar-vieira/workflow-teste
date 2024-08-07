@@ -2,7 +2,7 @@ name: Atualizar contratos 23 24 2
 
 on:
     workflow_run:
-      workflows: ["Atualizar contratos 22 24 1"]
+      workflows: ["Atualizar contratos 23 24 1"]
       types:
         - completed
     workflow_dispatch:
