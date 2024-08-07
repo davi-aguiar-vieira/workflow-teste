@@ -856,3 +856,108 @@
 2024-08-07 15:48:24,130 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394502000144-1-008259/2022
 2024-08-07 15:49:17,510 - logger_coletaAPI - ERROR - Erro ao obter contrato: 26474056000171-1-000145/2022
 2024-08-07 15:52:05,472 - logger_coletaAPI - ERROR - Erro ao obter contrato: 33787094000140-1-000020/2022
+2024-08-07 16:02:38,421 - logger_coletaAPI - ERROR - Erro ao obter contrato: 26994558000123-1-000002/2023
+2024-08-07 16:04:21,447 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394460000141-1-000027/2023
+2024-08-07 16:06:33,172 - logger_coletaAPI - ERROR - Erro ao obter contrato: 33654831000136-1-000013/2023
+2024-08-07 16:09:11,170 - logger_coletaAPI - ERROR - Erro ao obter contrato: 15126437000143-1-000062/2023
+2024-08-07 16:09:20,583 - logger_coletaAPI - ERROR - Erro ao obter contrato: 03657392000154-1-000003/2023
+2024-08-07 16:10:11,170 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-000162/2023
+2024-08-07 16:12:00,825 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394411000109-1-000003/2023
+2024-08-07 16:12:46,120 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00418993000116-1-000004/2023
+2024-08-07 16:12:55,430 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-000275/2023
+2024-08-07 16:14:33,857 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394536000139-1-000030/2023
+2024-08-07 16:14:44,080 - logger_coletaAPI - ERROR - Erro ao obter contrato: 26989715000102-1-000014/2023
+2024-08-07 16:15:10,686 - logger_coletaAPI - ERROR - Erro ao obter contrato: 26989715000102-1-000015/2023
+2024-08-07 16:18:37,958 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394494010441-1-000023/2023
+2024-08-07 16:19:04,619 - logger_coletaAPI - ERROR - Erro ao obter contrato: 33654831000136-1-000026/2023
+2024-08-07 16:21:56,946 - logger_coletaAPI - ERROR - Erro ao obter contrato: 26989715000102-1-000025/2023
+2024-08-07 16:22:36,355 - logger_coletaAPI - ERROR - Erro ao obter contrato: 03277610000125-1-000013/2023
+2024-08-07 16:25:10,836 - logger_coletaAPI - ERROR - Erro ao obter contrato: 37753638000103-1-000003/2023
+2024-08-07 16:25:53,558 - logger_coletaAPI - ERROR - Erro ao obter contrato: 05526783000165-1-000004/2023
+2024-08-07 16:28:06,027 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-000803/2023
+2024-08-07 16:28:12,872 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-000823/2023
+2024-08-07 16:32:01,955 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00531640000128-1-000011/2023
+2024-08-07 16:32:40,612 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394502000144-1-000670/2023
+2024-08-07 16:33:43,827 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-001023/2023
+2024-08-07 16:38:01,287 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-001151/2023
+2024-08-07 16:39:36,498 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394411000109-1-000017/2023
+2024-08-07 16:39:42,837 - logger_coletaAPI - ERROR - Erro ao obter contrato: 03277610000125-1-000032/2023
+2024-08-07 16:41:08,529 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00348003000110-1-000046/2023
+2024-08-07 16:41:42,671 - logger_coletaAPI - ERROR - Erro ao obter contrato: 23612685000122-1-000005/2023
+2024-08-07 16:42:10,248 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394494000136-1-000106/2023
+2024-08-07 16:46:56,210 - logger_coletaAPI - ERROR - Erro ao obter contrato: 07421906000129-1-000011/2023
+2024-08-07 16:47:18,824 - logger_coletaAPI - ERROR - Erro ao obter contrato: 29406625000130-1-000023/2023
+2024-08-07 16:47:59,190 - logger_coletaAPI - ERROR - Erro ao obter contrato: 10791831000182-1-000004/2023
+2024-08-07 16:50:37,800 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-001589/2023
+2024-08-07 16:51:11,192 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-001593/2023
+2024-08-07 16:52:00,366 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394684000153-1-000040/2023
+2024-08-07 16:53:14,022 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00581009000133-1-000003/2023
+2024-08-07 16:56:13,147 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-001802/2023
+2024-08-07 16:57:12,201 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-001865/2023
+2024-08-07 16:57:14,128 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-001868/2023
+2024-08-07 17:00:59,131 - logger_coletaAPI - ERROR - Erro ao obter contrato: 86900545000170-1-000025/2023
+2024-08-07 17:01:46,507 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00489828000155-1-000004/2023
+2024-08-07 17:07:17,083 - logger_coletaAPI - ERROR - Erro ao obter contrato: 37753638000103-1-000010/2023
+2024-08-07 17:07:23,063 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00509968000148-1-000404/2023
+2024-08-07 17:09:21,051 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00348003000110-1-000093/2023
+2024-08-07 17:09:44,398 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-002384/2023
+2024-08-07 17:09:49,174 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394411000109-1-000036/2023
+2024-08-07 17:09:53,449 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394411000109-1-000037/2023
+2024-08-07 17:09:57,969 - logger_coletaAPI - ERROR - Erro ao obter contrato: 05448380000145-1-000012/2023
+2024-08-07 17:12:01,322 - logger_coletaAPI - ERROR - Erro ao obter contrato: 15126437000143-1-000456/2023
+2024-08-07 17:12:04,752 - logger_coletaAPI - ERROR - Erro ao obter contrato: 26989715000102-1-000151/2023
+2024-08-07 17:18:20,321 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00531640000128-1-000022/2023
+2024-08-07 17:21:43,525 - logger_coletaAPI - ERROR - Erro ao obter contrato: 10898596000142-1-000033/2023
+2024-08-07 17:22:00,973 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394502000144-1-002200/2023
+2024-08-07 17:22:22,386 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00488478000102-1-000004/2023
+2024-08-07 17:22:57,021 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00488478000102-1-000007/2023
+2024-08-07 17:23:34,176 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00579987000140-1-000012/2023
+2024-08-07 17:26:03,106 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-003008/2023
+2024-08-07 17:26:11,746 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394494000136-1-000198/2023
+2024-08-07 17:28:09,175 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-003073/2023
+2024-08-07 17:29:19,606 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00889834000108-1-000006/2023
+2024-08-07 17:29:43,983 - logger_coletaAPI - ERROR - Erro ao obter contrato: 27136980000100-1-000008/2023
+2024-08-07 17:30:07,015 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-003195/2023
+2024-08-07 17:32:49,427 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394494000136-1-000214/2023
+2024-08-07 17:36:11,803 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394494000136-1-000226/2023
+2024-08-07 17:36:15,770 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394502000144-1-002740/2023
+2024-08-07 17:39:39,308 - logger_coletaAPI - ERROR - Erro ao obter contrato: 37753638000103-1-000015/2023
+2024-08-07 17:40:41,605 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00531640000128-1-000030/2023
+2024-08-07 17:41:36,721 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-003736/2023
+2024-08-07 17:41:48,167 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-003747/2023
+2024-08-07 17:44:22,561 - logger_coletaAPI - ERROR - Erro ao obter contrato: 37115383000153-1-000019/2023
+2024-08-07 17:46:06,368 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 145, da data inicial 20230102 e data final 20230702
+2024-08-07 17:46:52,071 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 146, da data inicial 20230102 e data final 20230702
+2024-08-07 17:48:14,043 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 147, da data inicial 20230102 e data final 20230702
+2024-08-07 17:48:38,287 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 148, da data inicial 20230102 e data final 20230702
+2024-08-07 17:49:29,049 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 149, da data inicial 20230102 e data final 20230702
+2024-08-07 17:50:21,152 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 150, da data inicial 20230102 e data final 20230702
+2024-08-07 17:51:48,875 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 151, da data inicial 20230102 e data final 20230702
+2024-08-07 17:52:39,141 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 152, da data inicial 20230102 e data final 20230702
+2024-08-07 17:53:29,965 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 153, da data inicial 20230102 e data final 20230702
+2024-08-07 17:54:58,316 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 154, da data inicial 20230102 e data final 20230702
+2024-08-07 17:56:00,768 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 155, da data inicial 20230102 e data final 20230702
+2024-08-07 17:57:05,606 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 156, da data inicial 20230102 e data final 20230702
+2024-08-07 17:57:54,773 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 157, da data inicial 20230102 e data final 20230702
+2024-08-07 17:58:45,943 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 158, da data inicial 20230102 e data final 20230702
+2024-08-07 17:59:55,105 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 159, da data inicial 20230102 e data final 20230702
+2024-08-07 18:00:23,899 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 160, da data inicial 20230102 e data final 20230702
+2024-08-07 18:00:49,651 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 161, da data inicial 20230102 e data final 20230702
+2024-08-07 18:01:14,142 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 162, da data inicial 20230102 e data final 20230702
+2024-08-07 18:01:37,416 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 163, da data inicial 20230102 e data final 20230702
+2024-08-07 18:03:58,889 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-004760/2023
+2024-08-07 18:04:10,298 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394502000144-1-003646/2023
+2024-08-07 18:04:38,521 - logger_coletaAPI - ERROR - Erro ao obter contrato: 44365866000171-1-000002/2023
+2024-08-07 18:04:46,519 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394494000136-1-000271/2023
+2024-08-07 18:05:47,217 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394494000136-1-000274/2023
+2024-08-07 18:05:54,174 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00348003000110-1-000155/2023
+2024-08-07 18:06:01,806 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-004916/2023
+2024-08-07 18:06:36,868 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394684000153-1-000111/2023
+2024-08-07 18:06:40,714 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394502000144-1-003762/2023
+2024-08-07 18:07:01,472 - logger_coletaAPI - ERROR - Erro ao obter contrato: 14702767000177-1-000006/2023
+2024-08-07 18:10:13,026 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394502000144-1-003966/2023
+2024-08-07 18:11:35,682 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-005350/2023
+2024-08-07 18:12:57,487 - logger_coletaAPI - ERROR - Erro ao obter contrato: 05448380000145-1-000030/2023
+2024-08-07 18:14:35,769 - logger_coletaAPI - ERROR - Erro ao obter contrato: 03277610000125-1-000139/2023
+2024-08-07 18:15:36,731 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394684000153-1-000120/2023
+2024-08-07 18:16:09,098 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00531954000120-1-000048/2023
