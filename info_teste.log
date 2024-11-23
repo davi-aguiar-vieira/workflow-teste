@@ -7866,3 +7866,62 @@
 2024-11-16 12:46:13,160 - logger_coletaAPI - ERROR - Erro ao obter contrato: 03277610000125-1-000139/2023
 2024-11-16 12:48:00,906 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394684000153-1-000120/2023
 2024-11-16 12:48:56,366 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00531954000120-1-000048/2023
+2024-11-23 02:52:06,064 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 1, da data inicial 20210102 e data final 20220101
+2024-11-23 02:52:59,348 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 2, da data inicial 20210102 e data final 20220101
+2024-11-23 02:56:51,684 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 3, da data inicial 20210102 e data final 20220101
+2024-11-23 03:02:54,735 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 4, da data inicial 20210102 e data final 20220101
+2024-11-23 03:04:28,811 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394684000153-1-000004/2021
+2024-11-23 03:05:26,304 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 6, da data inicial 20210102 e data final 20220101
+2024-11-23 03:06:11,685 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 7, da data inicial 20210102 e data final 20220101
+2024-11-23 03:06:47,240 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 8, da data inicial 20210102 e data final 20220101
+2024-11-23 03:07:26,243 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 9, da data inicial 20210102 e data final 20220101
+2024-11-23 03:07:59,666 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 10, da data inicial 20210102 e data final 20220101
+2024-11-23 03:08:41,867 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 11, da data inicial 20210102 e data final 20220101
+2024-11-23 03:09:16,299 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 12, da data inicial 20210102 e data final 20220101
+2024-11-23 03:09:51,601 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 13, da data inicial 20210102 e data final 20220101
+2024-11-23 03:10:28,617 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 14, da data inicial 20210102 e data final 20220101
+2024-11-23 03:16:51,229 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 16, da data inicial 20210102 e data final 20220101
+2024-11-23 03:20:26,646 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-001058/2021
+2024-11-23 03:26:50,041 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 18, da data inicial 20210102 e data final 20220101
+2024-11-23 03:31:23,245 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 19, da data inicial 20210102 e data final 20220101
+2024-11-23 03:33:53,198 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-001314/2021
+2024-11-23 03:42:49,659 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00396895000125-1-000015/2021
+2024-11-23 03:44:54,507 - logger_coletaAPI - ERROR - Erro ao obter contrato: 86900545000170-1-000006/2021
+2024-11-23 03:48:20,172 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394429000100-1-000171/2021
+2024-11-23 03:48:40,310 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00348003000110-1-000196/2021
+2024-11-23 03:50:59,954 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394429000100-1-000185/2021
+2024-11-23 03:51:04,524 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394452000103-1-001612/2021
+2024-11-23 03:51:06,291 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00348003000110-1-000211/2021
+2024-11-23 03:51:07,771 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394429000100-1-000195/2021
+2024-11-23 03:53:33,130 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00348003000110-1-000217/2021
+2024-11-23 03:53:39,973 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00348003000110-1-000223/2021
+2024-11-23 03:53:43,884 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00348003000110-1-000225/2021
+2024-11-23 03:55:08,519 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394429000100-1-000219/2021
+2024-11-23 03:55:10,003 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00394429000100-1-000220/2021
+2024-11-23 03:59:10,818 - logger_coletaAPI - ERROR - Erro ao obter contrato: 00348003000110-1-000237/2021
+2024-11-23 03:59:24,920 - logger_coletaAPI - ERROR - Erro ao obter contrato: 04898488000177-1-000006/2021
+2024-11-23 04:02:30,416 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 30, da data inicial 20210102 e data final 20220101
+2024-11-23 04:04:56,530 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 31, da data inicial 20210102 e data final 20220101
+2024-11-23 04:06:51,011 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 32, da data inicial 20210102 e data final 20220101
+2024-11-23 04:11:19,496 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 33, da data inicial 20210102 e data final 20220101
+2024-11-23 04:13:59,747 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 34, da data inicial 20210102 e data final 20220101
+2024-11-23 04:19:13,442 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 35, da data inicial 20210102 e data final 20220101
+2024-11-23 04:24:32,129 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 36, da data inicial 20210102 e data final 20220101
+2024-11-23 04:29:20,630 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 37, da data inicial 20210102 e data final 20220101
+2024-11-23 04:31:01,500 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 38, da data inicial 20210102 e data final 20220101
+2024-11-23 04:36:14,690 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 39, da data inicial 20210102 e data final 20220101
+2024-11-23 04:38:48,200 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 40, da data inicial 20210102 e data final 20220101
+2024-11-23 04:40:47,096 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 41, da data inicial 20210102 e data final 20220101
+2024-11-23 04:46:10,785 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 42, da data inicial 20210102 e data final 20220101
+2024-11-23 04:49:51,832 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 43, da data inicial 20210102 e data final 20220101
+2024-11-23 04:55:05,911 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 44, da data inicial 20210102 e data final 20220101
+2024-11-23 05:01:14,478 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 45, da data inicial 20210102 e data final 20220101
+2024-11-23 05:07:22,802 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 46, da data inicial 20210102 e data final 20220101
+2024-11-23 05:12:35,811 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 47, da data inicial 20210102 e data final 20220101
+2024-11-23 05:17:18,063 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 48, da data inicial 20210102 e data final 20220101
+2024-11-23 05:18:05,452 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 49, da data inicial 20210102 e data final 20220101
+2024-11-23 05:18:45,264 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 50, da data inicial 20210102 e data final 20220101
+2024-11-23 05:19:26,136 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 51, da data inicial 20210102 e data final 20220101
+2024-11-23 05:19:50,821 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 52, da data inicial 20210102 e data final 20220101
+2024-11-23 05:20:23,095 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 53, da data inicial 20210102 e data final 20220101
+2024-11-23 05:22:07,643 - logger_coletaAPI - ERROR - Nao foi possivel fazer o requeste da pagina: 54, da data inicial 20210102 e data final 20220101
