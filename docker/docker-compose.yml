@@ -1,0 +1,127 @@
+# =============================================================
+# Docker Compose – PostgreSQL + Trino + Apache Ranger
+# =============================================================
+#
+# Services
+#   postgres       – main data warehouse (mock PII data)
+#   trino          – distributed SQL engine querying postgres
+#   ranger-postgres – dedicated DB for Apache Ranger metadata
+#   ranger-admin   – Apache Ranger admin UI & REST API
+#
+# Quick start:
+#   docker compose up --build
+#
+# After all services are healthy:
+#   ./scripts/test-integration.sh
+#   ./ranger/create-policies.sh
+#
+# UIs:
+#   Trino  → http://localhost:8080
+#   Ranger → http://localhost:6080  (admin / rangeradmin1)
+# =============================================================
+
+services:
+
+  # ============================================================
+  # PostgreSQL – main data warehouse
+  # ============================================================
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      POSTGRES_DB:       warehouse
+      POSTGRES_USER:     warehouse_user
+      POSTGRES_PASSWORD: warehouse_pass
+    volumes:
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - data-platform
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U warehouse_user -d warehouse"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================
+  # PostgreSQL – Ranger metadata store (separate instance)
+  # ============================================================
+  ranger-postgres:
+    image: postgres:15
+    container_name: ranger-postgres
+    environment:
+      POSTGRES_DB:       ranger
+      POSTGRES_USER:     ranger_user
+      POSTGRES_PASSWORD: ranger_pass
+    volumes:
+      - ranger_postgres_data:/var/lib/postgresql/data
+    networks:
+      - data-platform
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ranger_user -d ranger"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================
+  # Trino – distributed SQL query engine
+  # ============================================================
+  trino:
+    image: trinodb/trino:435
+    container_name: trino
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./trino/etc:/etc/trino
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - data-platform
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8080/v1/info"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+
+  # ============================================================
+  # Apache Ranger Admin
+  # Builds a custom image (downloads Ranger 2.4.0 from Apache).
+  # NOTE: First build takes 5-10 min (downloading ~200 MB).
+  # ============================================================
+  ranger-admin:
+    build:
+      context: ./ranger
+      dockerfile: Dockerfile
+    container_name: ranger-admin
+    ports:
+      - "6080:6080"
+    environment:
+      RANGER_DB_HOST:     ranger-postgres
+      RANGER_DB_PORT:     "5432"
+      RANGER_DB_NAME:     ranger
+      RANGER_DB_USER:     ranger_user
+      RANGER_DB_PASS:     ranger_pass
+      RANGER_ADMIN_PASSWORD: rangeradmin1
+    depends_on:
+      ranger-postgres:
+        condition: service_healthy
+    networks:
+      - data-platform
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:6080/service/public/v2/api/servicedef || exit 1"]
+      interval: 30s
+      timeout: 15s
+      retries: 20
+      start_period: 180s
+
+networks:
+  data-platform:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  ranger_postgres_data:
