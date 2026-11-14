@@ -1,0 +1,214 @@
+name: Docker Integration – PostgreSQL + Trino + Ranger
+
+on:
+  push:
+    branches:
+      - main
+      - 'copilot/**'
+    paths:
+      - 'docker/**'
+      - '.github/workflows/docker-integration.yml'
+  pull_request:
+    paths:
+      - 'docker/**'
+      - '.github/workflows/docker-integration.yml'
+  workflow_dispatch:
+
+jobs:
+  # ==============================================================
+  # Job 1 – Fast smoke tests: PostgreSQL + Trino
+  # (Does NOT build the Ranger image to keep CI fast)
+  # ==============================================================
+  test-postgres-trino:
+    name: PostgreSQL + Trino integration
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Start PostgreSQL and Trino
+        working-directory: docker
+        run: |
+          docker compose up -d postgres trino
+          echo "Services started. Waiting for health checks …"
+
+      - name: Wait for PostgreSQL
+        run: |
+          echo "Polling PostgreSQL health …"
+          for i in $(seq 1 30); do
+            if docker exec postgres pg_isready -U warehouse_user -d warehouse >/dev/null 2>&1; then
+              echo "PostgreSQL is ready after ${i} attempts."
+              break
+            fi
+            echo "  Attempt ${i}/30 – not ready yet …"
+            sleep 5
+          done
+          docker exec postgres pg_isready -U warehouse_user -d warehouse
+
+      - name: Wait for Trino
+        run: |
+          echo "Polling Trino health …"
+          for i in $(seq 1 40); do
+            STATUS=$(curl -sf http://localhost:8080/v1/info 2>/dev/null || true)
+            STARTING=$(echo "$STATUS" | python3 -c "import sys,json; print(json.load(sys.stdin).get('starting','true'))" 2>/dev/null || echo "true")
+            if [ "$STARTING" = "False" ]; then
+              echo "Trino is fully started after ${i} attempts."
+              break
+            fi
+            echo "  Attempt ${i}/40 – Trino starting=${STARTING} …"
+            sleep 5
+          done
+          curl -sf http://localhost:8080/v1/info | python3 -m json.tool
+
+      - name: Verify mock data in PostgreSQL
+        run: |
+          echo "--- Employees ---"
+          docker exec postgres psql -U warehouse_user -d warehouse \
+            -c "SELECT id, first_name, last_name, department FROM employees.employees ORDER BY id;"
+
+          echo "--- Customers ---"
+          docker exec postgres psql -U warehouse_user -d warehouse \
+            -c "SELECT id, full_name, city FROM customers.customers ORDER BY id;"
+
+          echo "--- Transactions ---"
+          docker exec postgres psql -U warehouse_user -d warehouse \
+            -c "SELECT COUNT(*) AS total, status FROM customers.transactions GROUP BY status ORDER BY status;"
+
+      - name: Run integration tests (PostgreSQL + Trino)
+        working-directory: docker
+        env:
+          TRINO_URL: http://localhost:8080
+          RANGER_URL: http://localhost:6080
+        run: |
+          chmod +x scripts/test-integration.sh
+          ./scripts/test-integration.sh
+
+      - name: Show Trino query plan (sanity check)
+        run: |
+          echo "Submitting EXPLAIN query to Trino …"
+          QUERY='EXPLAIN SELECT e.first_name, e.department, e.salary FROM postgresql.employees.employees e WHERE e.salary > 9000 ORDER BY e.salary DESC'
+          RESP=$(curl -sf -X POST \
+            -H "X-Trino-User: ci_user" \
+            -H "Content-Type: text/plain" \
+            --data-binary "$QUERY" \
+            "http://localhost:8080/v1/statement")
+          echo "$RESP" | python3 -m json.tool | head -30
+
+      - name: Dump logs on failure
+        if: failure()
+        run: |
+          echo "=== PostgreSQL logs ==="
+          docker logs postgres --tail 50 || true
+          echo "=== Trino logs ==="
+          docker logs trino --tail 100 || true
+
+      - name: Tear down
+        if: always()
+        working-directory: docker
+        run: docker compose down -v
+
+  # ==============================================================
+  # Job 2 – Ranger Admin build & API smoke test
+  # Runs on workflow_dispatch or push to main only (slow build).
+  # ==============================================================
+  test-ranger-admin:
+    name: Ranger Admin build & API
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Ranger Docker image
+        working-directory: docker
+        run: |
+          echo "Building Apache Ranger image (downloading ~200 MB) …"
+          docker compose build ranger-admin
+          echo "Build complete."
+
+      - name: Start all services
+        working-directory: docker
+        run: |
+          docker compose up -d
+          echo "All services started."
+
+      - name: Wait for PostgreSQL (warehouse)
+        run: |
+          for i in $(seq 1 30); do
+            docker exec postgres pg_isready -U warehouse_user -d warehouse >/dev/null 2>&1 && \
+              echo "Warehouse PostgreSQL ready." && break || true
+            sleep 5
+          done
+
+      - name: Wait for Trino
+        run: |
+          for i in $(seq 1 40); do
+            STARTING=$(curl -sf http://localhost:8080/v1/info 2>/dev/null \
+              | python3 -c "import sys,json; print(json.load(sys.stdin).get('starting','true'))" 2>/dev/null || echo "true")
+            [ "$STARTING" = "False" ] && echo "Trino ready." && break || true
+            sleep 5
+          done
+
+      - name: Wait for Ranger Admin (up to 10 min)
+        run: |
+          echo "Waiting for Ranger Admin to become healthy …"
+          for i in $(seq 1 60); do
+            STATUS=$(curl -sf http://localhost:6080/service/public/v2/api/servicedef 2>/dev/null || true)
+            if echo "$STATUS" | python3 -c "import sys,json; d=json.load(sys.stdin); assert isinstance(d,list)" 2>/dev/null; then
+              echo "Ranger Admin is ready after ${i} attempts."
+              break
+            fi
+            echo "  Attempt ${i}/60 – Ranger not ready yet …"
+            docker logs ranger-admin --tail 5 2>/dev/null || true
+            sleep 10
+          done
+          curl -sf http://localhost:6080/service/public/v2/api/servicedef \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print(f'Registered service defs: {len(d)}')"
+
+      - name: Create Ranger masking policies
+        working-directory: docker
+        run: |
+          chmod +x ranger/create-policies.sh
+          ./ranger/create-policies.sh http://localhost:6080 admin rangeradmin1
+
+      - name: Verify policies were created
+        run: |
+          POLICIES=$(curl -su "admin:rangeradmin1" \
+            "http://localhost:6080/service/public/v2/api/policy?serviceType=trino" \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print(f'{len(d)} policies found')")
+          echo "$POLICIES"
+          curl -su "admin:rangeradmin1" \
+            "http://localhost:6080/service/public/v2/api/policy?serviceType=trino" \
+            | python3 -m json.tool | grep '"name"' | head -10
+
+      - name: Run full integration tests
+        working-directory: docker
+        env:
+          TRINO_URL: http://localhost:8080
+          RANGER_URL: http://localhost:6080
+        run: |
+          chmod +x scripts/test-integration.sh
+          ./scripts/test-integration.sh
+
+      - name: Dump logs on failure
+        if: failure()
+        run: |
+          echo "=== ranger-admin logs ==="
+          docker logs ranger-admin --tail 100 || true
+          echo "=== ranger-postgres logs ==="
+          docker logs ranger-postgres --tail 30 || true
+          echo "=== trino logs ==="
+          docker logs trino --tail 50 || true
+
+      - name: Tear down
+        if: always()
+        working-directory: docker
+        run: docker compose down -v
